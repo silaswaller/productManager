@@ -1,13 +1,24 @@
-import React from 'react';
 import './App.css';
-import ProductForm from './components/ProductForm';
+import Main from './views/Main';
+import OneProduct from './components/OneProduct';
+import axios from 'axios';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
+
+
   return (
-    <div className="App">
-      <ProductForm />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route element={<Main/>} path="/" default/>
+          <Route element={<OneProduct />} path="/product/:id"/>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
+//TESTING TESTING!!
 
 export default App;
